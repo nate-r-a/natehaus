@@ -1,0 +1,14 @@
+<img src="https://emoji.slack-edge.com/T04DFV6UT/cat-jam/015239127af063f3.gif" class="centered" id="catjam" alt="catJAM" height="45" width="45">
+
+<script>
+  catjam = document.querySelector("#catjam")
+  height = catjam.height
+  new_height = height
+
+  catjam.addEventListener("click", () => {
+    new_height += 10
+
+    catjam.height = new_height
+    catjam.width = new_height
+  })
+</script>

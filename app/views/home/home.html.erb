@@ -2,13 +2,12 @@
 
 <script>
   catjam = document.querySelector("#catjam")
-  height = catjam.height
-  new_height = height
+  change = 10
 
   catjam.addEventListener("click", () => {
-    new_height += 10
+    change *= 1.1
 
-    catjam.height = new_height
-    catjam.width = new_height
+    catjam.height = catjam.height + change
+    catjam.width = catjam.width + change
   })
 </script>

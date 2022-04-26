@@ -1,8 +1,33 @@
 # frozen_string_literal: true
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+GameScore.destroy_all
+Game.destroy_all
+Team.destroy_all
+
+ppp = Team.create(name: "Pat's Pallino Pals", abbreviation: "PPP")
+blt = Team.create(name: "Bocce League Team", abbreviation: "BLT")
+inc = Team.create(name: "Inchworms", abbreviation: "INC")
+hot = Team.create(name: "Hot Rollers", abbreviation: "HOT")
+
+g = Game.create(venue: "Wyman Park")
+GameScore.create(game: g, team: blt, score: 9, win: false)
+GameScore.create(game: g, team: hot, score: 11, win: true)
+
+g = Game.create(venue: "Wyman Park")
+GameScore.create(game: g, team: ppp, score: 9, win: false)
+GameScore.create(game: g, team: inc, score: 11, win: true)
+#===================
+g = Game.create(venue: "Wyman Park")
+GameScore.create(game: g, team: hot, score: 2, win: false)
+GameScore.create(game: g, team: inc, score: 15, win: true)
+
+g = Game.create(venue: "Wyman Park")
+GameScore.create(game: g, team: blt, score: 12, win: false)
+GameScore.create(game: g, team: ppp, score: 13, win: true)
+#===================
+g = Game.create(venue: "Wyman Park")
+GameScore.create(game: g, team: ppp, score: 5, win: false)
+GameScore.create(game: g, team: hot, score: 13, win: true)
+
+g = Game.create(venue: "Wyman Park")
+GameScore.create(game: g, team: blt, score: 6, win: false)
+GameScore.create(game: g, team: inc, score: 15, win: true)

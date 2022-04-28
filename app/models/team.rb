@@ -34,8 +34,9 @@ class Team < ApplicationRecord
     result = nil
     previous_result = nil
     game_scores.all.reverse.each do |gs|
+      puts gs.inspect
+      break if gs.win != previous_result && !previous_result.nil?
       result = gs.win
-      break if result != previous_result && !previous_result.nil?
       count += 1
       previous_result = result
     end
